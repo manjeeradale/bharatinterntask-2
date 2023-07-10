@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Temperature Converter</h1>
+        <div class="input-group">
+            <label for="celsius">Celsius:</label>
+            <input type="number" id="celsius">
+        </div>
+        <div class="input-group">
+            <label for="fahrenheit">Fahrenheit:</label>
+            <input type="number" id="fahrenheit">
+        </div>
+        <div class="button-group">
+            <button onclick="convertCelsiusToFahrenheit()">Convert to Fahrenheit</button>
+            <button onclick="convertFahrenheitToCelsius()">Convert to Celsius</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 400px;
+    margin: 100px auto;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #666;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-group button {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-group button:hover {
+    background-color: #45a049;
+}
+
+</style>
+<script>
+    function convertCelsiusToFahrenheit() {
+    var celsiusInput = document.getElementById("celsius");
+    var fahrenheitInput = document.getElementById("fahrenheit");
+
+    var celsius = parseFloat(celsiusInput.value);
+    var fahrenheit = (celsius * 9 / 5) + 32;
+
+    fahrenheitInput.value = fahrenheit.toFixed(2);
+}
+
+function convertFahrenheitToCelsius() {
+    var celsiusInput = document.getElementById("celsius");
+    var fahrenheitInput = document.getElementById("fahrenheit");
+
+    var fahrenheit = parseFloat(fahrenheitInput.value);
+    var celsius = (fahrenheit - 32) * 5 / 9;
+
+    celsiusInput.value = celsius.toFixed(2);
+}
+
+</script>
+</body>
+</html>
